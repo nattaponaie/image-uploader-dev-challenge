@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import multer from 'multer';
 
+import asyncWrapper from '@api/middleware/async-wrapper';
 import { limits } from '@configs/multer';
 
 import service from './images-service';
@@ -12,12 +13,10 @@ const upload = multer({ limits });
 router.post(
   `/${resource}`,
   upload.single('image'),
-  async (req, res) => {
-    console.log('req', req.file);
-    
+  asyncWrapper(async (req, res) => {
     const result = await service.uploadImage(req.file);
     res.json(result);
-  },
+  }),
 );
 
 export default router;
