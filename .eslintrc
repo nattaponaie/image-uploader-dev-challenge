@@ -8,11 +8,22 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb-typescript/base",
+    "prettier",
     "prettier/@typescript-eslint"
   ],
   "parserOptions": {
     "ecmaVersion": 9,
     "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "alias": {
+          "api": "./src/api",
+          "configs": "./src/configs",
+          "utils": "./src/utils"
+        }
+      }
+    }
   }
 }
