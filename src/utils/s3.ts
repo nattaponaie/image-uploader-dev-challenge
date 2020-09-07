@@ -4,7 +4,7 @@ import {
   AWS_ACCESS_KEY,
   AWS_SECRET_ACCESS_KEY,
   AWS_BUCKET_NAME,
-} from 'configs/environment';
+} from '@configs/environment';
 
 const config = {
   accessKeyId: AWS_ACCESS_KEY,
