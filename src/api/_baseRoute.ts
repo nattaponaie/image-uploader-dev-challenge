@@ -5,7 +5,12 @@ interface BaseRoute {
   routes: Array<Router>,
 }
 
-export default ({ version, routes }: BaseRoute) => {
+interface IReturnBaseRoute {
+  version: string,
+  router: Router,
+}
+
+export default ({ version, routes }: BaseRoute): IReturnBaseRoute => {
   const router = Router();
   router.use(routes);
 
