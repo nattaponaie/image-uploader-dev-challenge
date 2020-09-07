@@ -1,13 +1,10 @@
-import dotenv from 'dotenv';
 import express from 'express';
+
+import { PORT } from '@configs/environment';
 
 import { supportApis, defaultApi } from './api';
 
-// initialize configuration
-dotenv.config();
-
 const app = express();
-const { env: { PORT } } = process;
 
 app.get('/health-check', (_, res) => res.send('Healthy!'));
 

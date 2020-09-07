@@ -1,12 +1,12 @@
 import BaseRoute from '../_baseRoute';
 
-import hello from './hello';
+import images from './images';
 
 export default {
   controllers: BaseRoute({
     version: 'v1',
     routes: [
-      hello.controller,
+      images.controller,
     ],
   }),
 };
