@@ -1,3 +1,8 @@
+import dotenv from 'dotenv';
+
+// initialize configuration
+dotenv.config();
+
 const { env } = process;
 
 export const {
